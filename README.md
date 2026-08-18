@@ -4,13 +4,13 @@
 
 ### Project Overview
 
-This project explores World Bank data on nominal GDP measured in current US$ using SQL and Excel. The analysis focuses on data quality and the evolution of Spain's GDP through annual growth rates and compound annual growth rates (CAGR) using cumulative, fixed-period and rolling-period approaches. 
+This project explores World Bank data on nominal GDP measured in current US$ using SQL and Excel. The analysis focuses on data coverage and the evolution of Spain's GDP through annual growth rates and compound annual growth rates (CAGR) using cumulative, fixed-period and rolling-period approaches. 
 
 The project is designed as an exploratory economic data analysis rather than an assessment of economic welfare or development. 
 
 ### Objectives
 
-- Assess World Bank data continuity and historical depth, developing a data quality indicator by country/region.
+- Assess World Bank data continuity and historical depth, developing a data coverage indicator by country/region.
   
 - Examine the evolution of nominal GDP in Spain.
   
@@ -77,7 +77,7 @@ World Bank Economic Indicators Analysis
 │    ├──── 01_schema.sql
 │    └──── 02_data_transformation.sql
 │    └──── 03_data_loading.sql
-│    └──── 04_data_quality.sql
+│    └──── 04_data_coverage.sql
 │    └──── 05_gdp_growth.sql
 │    └──── 06_cumulative_cagr.sql
 │    └──── 07_fixed_10-year-cagr.sql
@@ -85,7 +85,7 @@ World Bank Economic Indicators Analysis
 │    └──── 09_spain_queries
 ├── Images
 │    ├──── 01_cover.png
-│    └──── 02_data_quality.png
+│    └──── 02_data_coverage.png
 │    └──── 03_spain_gdp.png
 │    └──── 04_spain_10y_cagr.png
 └── README.md
