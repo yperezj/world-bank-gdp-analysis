@@ -10,7 +10,7 @@ The project is designed as an exploratory economic data analysis rather than an 
 
 ### Objectives
 
-- Assess World Bank data continuity and historical depth, developing a data coverage indicator by country/region.
+- Assess World Bank data continuity and historical depth by country/region, providing a data coverage assessment.
   
 - Examine the evolution of nominal GDP in Spain.
   
@@ -18,7 +18,7 @@ The project is designed as an exploratory economic data analysis rather than an 
 
 ### Dataset & Source
 
-The dataset used in this project comes from the World Bank's World Development Indicators (WDI), using the indicator **GDP (current US$)** (indicator code: 'NY.GDP.MKTP.CD'). It covers annual observations from 1960 to 2025 and includes data for countries, economies and regional aggregates.
+The dataset used in this project comes from the World Bank's World Development Indicators (WDI), using the indicator **GDP (current US$)** (indicator code: 'NY.GDP.MKTP.CD'). It contains annual observations covering the period from 1960 to 2025, and includes data for countries, economies and regional aggregates.
 
 **Source:** World Bank, World Development Indicators (WDI)
 
@@ -26,7 +26,7 @@ The dataset used in this project comes from the World Bank's World Development I
 
 **Indicator code:** `NY.GDP.MKTP.CD` 
 
-**Period:** 1960-2025
+**Dataset period:** 1960-2025
 
 **License:** CC BY 4.0
 
@@ -34,7 +34,7 @@ The dataset used in this project comes from the World Bank's World Development I
 
 ### Methodology
 
-The analysis was conducted using SQL for data extraction, transformation and calculation of previously defined metrics, and Excel for data summarization and visualization. 
+The analysis was conducted using SQL for data extraction, transformation and calculation of the defined metrics, and Excel for data summarization and visualization. 
 
 #### Data Coverage   
 
@@ -75,18 +75,18 @@ World Bank Economic Indicators Analysis
 │    └──── 01_gdp_analysis.xlsx
 ├── SQL  
 │    ├──── 01_schema.sql
-│    └──── 02_data_transformation.sql
-│    └──── 03_data_loading.sql
-│    └──── 04_data_coverage.sql
-│    └──── 05_gdp_growth.sql
-│    └──── 06_cumulative_cagr.sql
-│    └──── 07_fixed_10-year-cagr.sql
-│    └──── 08_rolling_10_year_cagr.sql
+│    ├──── 02_data_transformation.sql
+│    ├──── 03_data_loading.sql
+│    ├──── 04_data_coverage.sql
+│    ├──── 05_gdp_growth.sql
+│    ├──── 06_cumulative_cagr.sql
+│    ├──── 07_fixed_10-year-cagr.sql
+│    ├──── 08_rolling_10_year_cagr.sql
 │    └──── 09_spain_queries
 ├── Images
 │    ├──── 01_cover.png
-│    └──── 02_data_coverage.png
-│    └──── 03_spain_gdp.png
+│    ├──── 02_data_coverage.png
+│    ├──── 03_spain_gdp.png
 │    └──── 04_spain_10y_cagr.png
 └── README.md
 
