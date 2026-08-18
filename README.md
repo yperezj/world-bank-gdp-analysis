@@ -69,7 +69,7 @@ These metrics are considered separately because a longer historical series does 
 
 ### Structure
 
-World Bank Economic Indicators Analysis 
+```'World Bank Economic Indicators Analysis 
 ├── Excel
 │    └──── 01_gdp_analysis.xlsx
 ├── SQL  
@@ -87,7 +87,7 @@ World Bank Economic Indicators Analysis
 │    └──── 02_data_quality.png
 │    └──── 03_spain_gdp.png
 │    └──── 04_spain_10y_cagr.png
-└── README.md 
+└── README.md``` 
 
 
 
