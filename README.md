@@ -30,22 +30,22 @@ The dataset used in this project comes from the World Bank's World Development I
 
 **License:** CC BY 4.0
 
-[World Bank - GDP (current US$)]https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
+[World Bank - GDP (current US$)](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD)
 
 ### Methodology
 
 The analysis was conducted using SQL for data extraction, transformation and calculation of previously defined metrics, and Excel for data summarization and visualization. 
 
-#### Data Quality   
+#### Data Coverage   
 
-Data quality was assessed using two complementary indicators:
+Data coverage was assessed using two complementary indicators:
 
 - **Continuity:** the percentage of annual observations available between the first available observation and 2025.
 - **Historical depth:** the number of years covered from the first available observation until 2025.
 
 These metrics are considered separately because a longer historical series does not necessarily indicate better continuity, and comparing series length alone could disadvantage countries with shorter histories.
 
-![Data Quality Analysis](images/02_data_quality.png) 
+![Data Coverage Analysis](images/02_data_coverage.png) 
 
 #### Analysis 
 
