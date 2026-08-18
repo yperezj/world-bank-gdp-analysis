@@ -21,9 +21,13 @@ The project is designed as an exploratory economic data analysis rather than an 
 The dataset used in this project comes from the World Bank's World Development Indicators (WDI), using the indicator **GDP (current US$)** (indicator code: 'NY.GDP.MKTP.CD'). It covers annual observations from 1960 to 2025 and includes data for countries, economies and regional aggregates.
 
 **Source:** World Bank, World Development Indicators (WDI)
+
 **Indicator:** GDP (current US$)
+
 **Indicator code:** `NY.GDP.MKTP.CD` 
+
 **Period:** 1960-2025
+
 **License:** CC BY 4.0
 
 [World Bank - GDP (current US$)]https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
@@ -41,17 +45,17 @@ Data quality was assessed using two complementary indicators:
 
 These metrics are considered separately because a longer historical series does not necessarily indicate better continuity, and comparing series length alone could disadvantage countries with shorter histories.
 
-![Data Quality Analysis](<img width="1189" height="350" alt="data_quality" src="https://github.com/user-attachments/assets/f3c3ddac-b574-4720-b636-7317097d042d" />)
+![Data Quality Analysis](images/02_data_quality.png) 
 
 #### Analysis 
 
 ##### Spain GDP Evolution 
 
-![Spain GDP Evolution: GDP growth and cummulative CAGR evolution](<img width="1154" height="410" alt="spain_gdp" src="https://github.com/user-attachments/assets/1ff3b093-02d7-4af3-8b4d-b5855bb4f6fd" />)
+![Spain GDP Evolution: GDP growth and cumulative CAGR](images/03_spaing_gdp.png)
 
 ##### Decade CAGR Analysis
 
-![Spain decade Compound Annual Growth Rate (CAGR): fixed and rolling ten-year windows](<img width="1284" height="407" alt="spain_10y_cagr" src="https://github.com/user-attachments/assets/91a8c22d-cb47-492d-a93a-565cd640c55d" />)
+![Spain decade CAGR: fixed and rolling ten-year windows](images/spain_10y_cagr.png)
 
 ### Limitations
 
@@ -61,7 +65,30 @@ These metrics are considered separately because a longer historical series does 
 
 - The analysis focuses on Spain as a case study and does not attempt to provide a comprehensive cross-country economic comparison.
 
-- Data availability and historical depth vary across countries and regional aggregates, which should be considered when interpreting the data quality results. 
+- Data availability and historical depth vary across countries and regional aggregates, which should be considered when interpreting the data quality results.
+
+### Structure
+
+World Bank Economic Indicators Analysis 
+├── Excel
+│    └──── 01_gdp_analysis.xlsx
+├── SQL  
+│    ├──── 01_schema.sql
+│    └──── 02_data_transformation.sql
+│    └──── 03_data_loading.sql
+│    └──── 04_data_quality.sql
+│    └──── 05_gdp_growth.sql
+│    └──── 06_cumulative_cagr.sql
+│    └──── 07_fixed_10-year-cagr.sql
+│    └──── 08_rolling_10_year_cagr.sql
+│    └──── 09_spain_queries
+├── Images
+│    ├──── 01_cover.png
+│    └──── 02_data_quality.png
+│    └──── 03_spain_gdp.png
+│    └──── 04_spain_10y_cagr.png
+└── README.md 
+
 
 
 
