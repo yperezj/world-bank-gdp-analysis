@@ -1,3 +1,5 @@
+/*Create the database schema and staging table for the World Bank dataset.*/
+
 CREATE TABLE countries(
 	
     id SERIAL PRIMARY KEY,
