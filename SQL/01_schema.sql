@@ -123,7 +123,7 @@ CREATE TABLE pib (
 );
 
 /*Two regional aggregates (AFE and AFW) had missing "Country Name" in the imported
-dataset. After verifying that only these two records were affected, they will be
+dataset. After verifying that only these two records were affected, they are
 corrected manually*/
 
 UPDATE pib
