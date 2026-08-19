@@ -1,3 +1,5 @@
+/*Transform the World Bank dataset from wide to long format*/
+
 /*Helper query: generate_series is used to generate the year-value pairs required for the VALUES clause in the unpivot
 step below.*/
 
