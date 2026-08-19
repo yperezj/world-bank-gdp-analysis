@@ -10,22 +10,9 @@ CREATE TABLE countries(
 CREATE TABLE indicators(
 id SERIAL PRIMARY KEY,
 indicator VARCHAR(100) NOT NULL,
-code VARCHAR(100) NOT NULL
+code VARCHAR(100) UNIQUE NOT NULL
 
 );
-
-
-
-/*Example: insert sample values
- 
-
-INSERT INTO paises(nombre, codigo_iso, continente)
-VALUES
-('España','ESP','Europa'),
-('Francia','FRA','EUROPA'),
-('Estados Unidos', 'USA', 'América')
-
-;*/
 
 
 CREATE TABLE observations(
@@ -46,12 +33,10 @@ REFERENCES indicators(id)
 );
 
 
-
-/*Helper query: the query returns a serie of strings that we will use in our final table. 
+/*Helper query: the query returns a serie of strings that we will use in our staging table. 
  STRING_AGG concatenates ' " ', consecutive numbers from the first recorded year to the 
  last one, '  " ' , and the word 'NUMERIC'. Then we will paste the result within the 
- SELECT of our final table. This way we avoid writing manually every "year column".
- When concatenating strings we can use 'E' + '\n' as an INTO */
+ SELECT of our final table. This way we avoid writing manually every "year column". */
  
 
 SELECT STRING_AGG(' "' || generate_series || '" NUMERIC', E',\n')
@@ -59,8 +44,8 @@ SELECT STRING_AGG(' "' || generate_series || '" NUMERIC', E',\n')
 FROM GENERATE_SERIES(1960, 2025);
 
 
-/*Final table: table with the structure of the World Bank database. We will need it 
- to import the real data */
+/*Staging table matching the original World Bank dataset structure. It is used to import the raw 
+CSV before transforming the data into the normalized schema above.*/
 
 
 CREATE TABLE pib (
@@ -146,5 +131,5 @@ SET "Country Name"='África oriental y meridional'
 WHERE "Country Code"='AFE';
 
 UPDATE pib
-SET "Country Name"='Africa occidental y central'
+SET "Country Name"='África occidental y central'
 WHERE "Country Code"='AFW';
