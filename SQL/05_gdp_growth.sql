@@ -22,8 +22,8 @@ SELECT
   indicator_code,year, 
   value, 
   last_value,
-  ROUND(100.00*value/last_value,2) AS growth_index,
-  ROUND(100.00*(value-last_value)/last_value,2) AS growth_rate
+  ROUND(100.00 * value / last_value,2) AS growth_index,
+  ROUND(100.00 * (value - last_value) / last_value,2) AS growth_rate
 
 FROM year_comparison
 
