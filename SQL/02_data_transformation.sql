@@ -1,11 +1,11 @@
-/*Helper query: we use generate series another time in order to create the content of VALUES function for the next 
-step*/
+/*Helper query: generate_series is used to generate the year-value pairs required for the VALUES clause in the unpivot
+step below.*/
 
 SELECT '('|| gs || ',p."' || gs || '"),'
 FROM generate_series(1960,2025) AS gs;
 
 
-/Unpivoted table/
+/*Unpivoted table*/
 CREATE TABLE unpivot_pib AS(
 SELECT 
 p."Country Name" AS country,
@@ -88,6 +88,3 @@ FROM pib p CROSS JOIN LATERAL(
 );
 
 
-/*First time I created unpivot_pib table I forgot including "Indicator Name", so I deleted it and created the table 
-again with the update*/
-DROP TABLE unpivot_pib;
