@@ -6,7 +6,7 @@ CREATE VIEW detailed_coverage AS(
 	
 	  SELECT 
         MIN(year) AS first_year,
-        ROUND(100.00*COUNT(value)/(2025-MIN(year)+1),2) AS coverage_rate,
+        ROUND(100.00 * COUNT(value) / (2025 - MIN(year) + 1),2) AS coverage_rate,
         country,
         c.iso_code,
         ind,
@@ -62,7 +62,7 @@ CREATE VIEW historical_depth AS(
 	iso_code,
 	indicator,
 	MIN(year) AS first_year,
-	2025-MIN(year)+1 AS years_covered
+	2025 - MIN(year) + 1 AS years_covered
 
 FROM 
 	observations o 
