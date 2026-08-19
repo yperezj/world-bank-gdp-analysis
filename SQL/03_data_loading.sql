@@ -1,4 +1,4 @@
-/*Filling in first step created tables with pib and unpivot_pib tables data*/
+/*Populate the tables created in the first step using data from pib and unpivot_pib.*/
 
 INSERT INTO countries (name,iso_code)
 
@@ -21,9 +21,10 @@ FROM pib;
 
 
 
-INSERT INTO observaciones(country_id, indicator_id, year, value)
+INSERT INTO observations (country_id, indicator_id, year, value)
 
 SELECT c.id, i.id, n.year, n.value 
 
-FROM unpivot_pib n LEFT JOIN countries c ON n.country=c.name
-LEFT JOIN indicators i ON n.ind=i.indicator;
+FROM unpivot_pib n 
+INNER JOIN countries c ON n.country=c.name
+INNER JOIN indicators i ON n.ind=i.indicator;
