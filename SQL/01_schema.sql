@@ -1,4 +1,5 @@
 CREATE TABLE countries(
+	
     id SERIAL PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
 	iso_code CHAR(3) UNIQUE NOT NULL,
@@ -8,27 +9,28 @@ CREATE TABLE countries(
 
 
 CREATE TABLE indicators(
-id SERIAL PRIMARY KEY,
-indicator VARCHAR(100) NOT NULL,
-code VARCHAR(100) UNIQUE NOT NULL
+	
+    id SERIAL PRIMARY KEY,
+    indicator VARCHAR(100) NOT NULL,
+    code VARCHAR(100) UNIQUE NOT NULL
 
 );
 
 
 CREATE TABLE observations(
 
-country_id INT NOT NULL , 
-indicator_id INT NOT NULL, 
-year INT NOT NULL,
-value NUMERIC(20,3),
+    country_id INT NOT NULL , 
+    indicator_id INT NOT NULL, 
+    year INT NOT NULL,
+    value NUMERIC(20,3),
 
-UNIQUE (country_id,indicator_id,year),
+    UNIQUE (country_id,indicator_id,year),
 
-FOREIGN KEY(country_id)
-REFERENCES countries(id),
+    FOREIGN KEY(country_id)
+    REFERENCES countries(id),
 
-FOREIGN KEY (indicator_id)
-REFERENCES indicators(id)
+    FOREIGN KEY (indicator_id)
+    REFERENCES indicators(id)
 
 );
 
@@ -37,16 +39,16 @@ REFERENCES indicators(id)
  STRING_AGG concatenates ' " ', consecutive numbers from the first recorded year to the 
  last one, '  " ' , and the word 'NUMERIC'. Then we will paste the result within the 
  SELECT of our final table. This way we avoid writing manually every "year column". */
- 
 
-SELECT STRING_AGG(' "' || generate_series || '" NUMERIC', E',\n')
+SELECT 
+	STRING_AGG(' "' || generate_series || '" NUMERIC', E',\n')
 
-FROM GENERATE_SERIES(1960, 2025);
+FROM 
+	GENERATE_SERIES(1960, 2025);
 
 
 /*Staging table matching the original World Bank dataset structure. It is used to import the raw 
 CSV before transforming the data into the normalized schema above.*/
-
 
 CREATE TABLE pib (
 "Country Name" TEXT,
@@ -121,6 +123,7 @@ CREATE TABLE pib (
  "2025" NUMERIC
 
 );
+
 
 /*Two regional aggregates (AFE and AFW) had missing "Country Name" in the imported
 dataset. After verifying that only these two records were affected, they are
