@@ -1,21 +1,27 @@
 /*Helper query: generate_series is used to generate the year-value pairs required for the VALUES clause in the unpivot
 step below.*/
 
-SELECT '('|| gs || ',p."' || gs || '"),'
-FROM generate_series(1960,2025) AS gs;
+SELECT 
+   '('|| gs || ',p."' || gs || '"),'
+
+FROM 
+   generate_series(1960,2025) AS gs;
 
 
 /*Unpivoted table*/
-CREATE TABLE unpivot_pib AS(
-SELECT 
-p."Country Name" AS country,
-p."Indicator Name" AS ind,
-yv.year AS year,
-yv.value AS value
 
-FROM pib p CROSS JOIN LATERAL(
+CREATE TABLE unpivot_pib AS(
+   SELECT 
+     p."Country Name" AS country,
+     p."Indicator Name" AS ind,
+     yv.year AS year,
+     yv.value AS value
    
-   VALUES 
+   FROM 
+     pib p 
+     CROSS JOIN LATERAL(
+       
+       VALUES
 (1960,p."1960"),
 (1961,p."1961"),
 (1962,p."1962"),
@@ -86,5 +92,6 @@ FROM pib p CROSS JOIN LATERAL(
 ) AS yv (year, value);
 
 );
+
 
 
