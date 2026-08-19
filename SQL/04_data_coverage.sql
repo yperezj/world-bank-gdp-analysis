@@ -1,4 +1,4 @@
-/*Detailed coverage data*/
+/*Create views to measure data continuity and historical depth*/
 
 CREATE VIEW detailed_coverage AS(
 	
